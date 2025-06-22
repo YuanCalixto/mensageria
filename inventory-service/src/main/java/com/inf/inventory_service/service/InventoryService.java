@@ -3,7 +3,6 @@ package com.inf.inventory_service.service;
 import com.inf.inventory_service.model.InventoryEvent;
 import com.inf.inventory_service.producer.InventoryProducer;
 import java.time.Instant;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Random;
 import org.springframework.stereotype.Service;

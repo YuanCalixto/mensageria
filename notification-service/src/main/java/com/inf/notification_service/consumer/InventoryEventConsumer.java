@@ -12,14 +12,15 @@ public class InventoryEventConsumer {
   private final ObjectMapper objectMapper;
   private final NotificationService notificationService;
 
-  public InventoryEventConsumer(NotificationService notificationService) {
+  public InventoryEventConsumer(NotificationService notificationService, ObjectMapper objectMapper) {
     this.notificationService = notificationService;
-    this.objectMapper = new ObjectMapper();
+    this.objectMapper = objectMapper;
   }
 
   @KafkaListener(topics = "inventory-events", groupId = "notification-group")
   public void consume(String message) {
     try {
+      System.out.println("Recebeu mensagem do Kafka: " + message);
       InventoryEvent event = objectMapper.readValue(message, InventoryEvent.class);
       notificationService.notifyUser(event);
     } catch (Exception e) {

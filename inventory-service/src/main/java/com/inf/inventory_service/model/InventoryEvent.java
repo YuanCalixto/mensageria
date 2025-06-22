@@ -13,28 +13,28 @@ public class InventoryEvent {
     return orderId;
   }
 
-  public boolean isSuccess() {
-    return success;
-  }
-
-  public String getMessage() {
-    return message;
-  }
-
-  public Instant getProcessedAt() {
-    return processedAt;
-  }
-
   public void setOrderId(String orderId) {
     this.orderId = orderId;
+  }
+
+  public boolean isSuccess() {
+    return success;
   }
 
   public void setSuccess(boolean success) {
     this.success = success;
   }
 
+  public String getMessage() {
+    return message;
+  }
+
   public void setMessage(String message) {
     this.message = message;
+  }
+
+  public Instant getProcessedAt() {
+    return processedAt;
   }
 
   public void setProcessedAt(Instant processedAt) {

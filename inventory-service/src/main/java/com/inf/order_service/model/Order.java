@@ -6,8 +6,8 @@ import java.util.UUID;
 
 public class Order {
 
-  private String orderId;
-  private Instant timestamp;
+  private final String orderId;
+  private final Instant timestamp;
   private List<String> items;
 
   public Order() {

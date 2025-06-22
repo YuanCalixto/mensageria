@@ -22,3 +22,18 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+inventory-service/.idea/vcs.xml
+inventory-service/.idea/misc.xml
+inventory-service/.idea/jarRepositories.xml
+inventory-service/.idea/encodings.xml
+inventory-service/.idea/compiler.xml
+notification-service/.idea/compiler.xml
+notification-service/.idea/encodings.xml
+notification-service/.idea/jarRepositories.xml
+notification-service/.idea/misc.xml
+notification-service/.idea/vcs.xml
+order-service/.idea/compiler.xml
+order-service/.idea/encodings.xml
+order-service/.idea/jarRepositories.xml
+order-service/.idea/misc.xml
+order-service/.idea/vcs.xml
