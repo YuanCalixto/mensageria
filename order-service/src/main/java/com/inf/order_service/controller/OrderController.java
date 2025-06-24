@@ -19,8 +19,9 @@ public class OrderController {
   }
 
   @PostMapping
-  public ResponseEntity<String> createOrder(@RequestBody Order order) {
+  public ResponseEntity<Order> createOrder(@RequestBody Order order) {
     orderService.processOrder(order);
-    return ResponseEntity.ok("Pedido enviado com sucesso!");
+    return ResponseEntity.ok(order); // retorna o objeto que foi recebido/enviado
   }
+
 }

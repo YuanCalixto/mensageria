@@ -37,3 +37,13 @@ order-service/.idea/encodings.xml
 order-service/.idea/jarRepositories.xml
 order-service/.idea/misc.xml
 order-service/.idea/vcs.xml
+.idea/*
+*.lst
+*.xml
+*.txt
+*.class
+inventory-service/target/inventory-service-0.0.1-SNAPSHOT.jar.original
+notification-service/target/notification-service-0.0.1-SNAPSHOT.jar.original
+order-service/target/order-service-0.0.1-SNAPSHOT.jar.original
+order-service/target/classes/com/inf/order_service/controller/OrderController.class
+order-service/target/classes/com/inf/order_service/controller/OrderController.class
