@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini E-commerce - Pedido</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <script src="https://cdn.jsdelivr.net/npm/sockjs-client/dist/sockjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/stompjs/lib/stomp.min.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Menu Lateral -->
+    <aside class="menu-lateral">
+      <h2>Categorias</h2>
+      <ul class="categorias-list">
+        <li><button class="categoria-btn active" data-categoria="tecnologia">🖥️ Tecnologia</button></li>
+        <li><button class="categoria-btn" data-categoria="casa">🏠 Casa e Cozinha</button></li>
+        <li><button class="categoria-btn" data-categoria="moda">👗 Moda</button></li>
+        <li><button class="categoria-btn" data-categoria="livros">📚 Livros</button></li>
+        <li><button class="categoria-btn" data-categoria="beleza">💄 Beleza</button></li>
+      </ul>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="conteudo-principal">
+      <div class="container">
+        <h1>Escolha seus produtos 🛒</h1>
+
+        <form id="pedido-form">
+          <!-- Seção de Tecnologia -->
+          <section class="categoria-produtos active" id="tecnologia">
+            <h2>🖥️ Tecnologia</h2>
+            <div class="produtos">
+              <label class="produto">
+                <input type="checkbox" name="item" value="notebook" data-preco="7299.90" />
+                💻 Notebook
+                <span class="preco">R$ 7.299,90</span>
+              </label>
+
+              <label class="produto">
+                <input type="checkbox" name="item" value="mouse" data-preco="499.59" />
+                🖱️ Mouse
+                <span class="preco">R$ 499,59</span>
+              </label>
+
+              <label class="produto">
+                <input type="checkbox" name="item" value="monitor" data-preco="799.90" />
+                🖥️ Monitor
+                <span class="preco">R$ 799,90</span>
+              </label>
+
+              <label class="produto">
+                <input type="checkbox" name="item" value="teclado" data-preco="279.90" />
+                ⌨️ Teclado
+                <span class="preco">R$ 279,90</span>
+              </label>
+
+              <label class="produto">
+                <input type="checkbox" name="item" value="headset" data-preco="659.99" />
+                🎧 Headset
+                <span class="preco">R$ 659,99</span>
+              </label>
+
+              <label class="produto">
+                <input type="checkbox" name="item" value="webcam" data-preco="199.90" />
+                📷 Webcam
+                <span class="preco">R$ 199,90</span>
+              </label>
+
+              <label class="produto">
+                <input type="checkbox" name="item" value="cadeira gamer" data-preco="899.90" />
+                🪑 Cadeira Gamer
+                <span class="preco">R$ 899,90</span>
+              </label>
+
+              <label class="produto">
+                <input type="checkbox" name="item" value="impressora" data-preco="1499.90" />
+                🖨️ Impressora
+                <span class="preco">R$ 1.499,90</span>
+              </label>
+
+              <label class="produto">
+                <input type="checkbox" name="item" value="smartphone" data-preco="4152.69" />
+                📱 Smartphone
+                <span class="preco">R$ 4.152,69</span>
+              </label>
+            </div>
+          </section>
+
+          <!-- Seção Casa e Cozinha -->
+          <section class="categoria-produtos" id="casa">
+            <h2>🏠 Casa e Cozinha</h2>
+            <div class="produtos">
+              <label class="produto">
+                <input type="checkbox" name="item" value="airfryer" data-preco="599.90" />
+                🍟 Air Fryer Digital
+                <span class="preco">R$ 599,90</span>
+              </label>
+              
+              <label class="produto">
+                <input type="checkbox" name="item" value="liquidificador" data-preco="249.00" />
+                🥤 Liquidificador Potente
+                <span class="preco">R$ 249,00</span>
+              </label>
+              
+              <label class="produto">
+                <input type="checkbox" name="item" value="cafeteira" data-preco="459.90" />
+                ☕ Cafeteira Premium
+                <span class="preco">R$ 459,90</span>
+              </label>
+            </div>
+          </section>
+
+          <!-- Seção Moda -->
+          <section class="categoria-produtos" id="moda">
+            <h2>👗 Moda</h2>
+            <div class="produtos">
+              <label class="produto">
+                <input type="checkbox" name="item" value="tenis" data-preco="299.90" />
+                👟 Tênis Esportivo
+                <span class="preco">R$ 299,90</span>
+              </label>
+              
+              <label class="produto">
+                <input type="checkbox" name="item" value="moletom" data-preco="189.90" />
+                🧥 Moletom Premium
+                <span class="preco">R$ 189,90</span>
+              </label>
+              
+              <label class="produto">
+                <input type="checkbox" name="item" value="bolsa" data-preco="159.90" />
+                👜 Bolsa Feminina
+                <span class="preco">R$ 159,90</span>
+              </label>
+            </div>
+          </section>
+
+          <!-- Seção Livros -->
+          <section class="categoria-produtos" id="livros">
+            <h2>📚 Livros</h2>
+            <div class="produtos">
+              <label class="produto">
+                <input type="checkbox" name="item" value="livro1" data-preco="49.90" />
+                📘 Romance Best-seller
+                <span class="preco">R$ 49,90</span>
+              </label>
+              
+              <label class="produto">
+                <input type="checkbox" name="item" value="livro2" data-preco="59.90" />
+                📕 Livro de Negócios
+                <span class="preco">R$ 59,90</span>
+              </label>
+              
+              <label class="produto">
+                <input type="checkbox" name="item" value="livro3" data-preco="39.90" />
+                📗 Guia de Viagem
+                <span class="preco">R$ 39,90</span>
+              </label>
+            </div>
+          </section>
+
+          <!-- Seção Beleza -->
+          <section class="categoria-produtos" id="beleza">
+            <h2>💄 Beleza</h2>
+            <div class="produtos">
+              <label class="produto">
+                <input type="checkbox" name="item" value="perfume" data-preco="289.90" />
+                💎 Perfume Importado
+                <span class="preco">R$ 289,90</span>
+              </label>
+              
+              <label class="produto">
+                <input type="checkbox" name="item" value="skincare" data-preco="179.90" />
+                🧴 Kit Skincare
+                <span class="preco">R$ 179,90</span>
+              </label>
+              
+              <label class="produto">
+                <input type="checkbox" name="item" value="maquiagem" data-preco="129.90" />
+                💄 Kit Maquiagem
+                <span class="preco">R$ 129,90</span>
+              </label>
+            </div>
+          </section>
+
+          <div class="total-container">
+            <h3>Total: <span id="total">R$ 0,00</span></h3>
+          </div>
+
+          <div class="botoes-acoes">
+            <button type="button" id="resetar-btn" class="btn-secundario">Limpar Seleção ❌</button>
+            <button type="submit" class="btn-primario">Enviar Pedido ✅</button>
+          </div>
+
+          <button type="submit">Enviar Pedido ✅</button>
+        </form>
+
+        <h2>Resposta do Servidor:</h2>
+        <pre id="resposta"></pre>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
